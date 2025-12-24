@@ -6,7 +6,6 @@ import { useSearch } from "../context/SearchContext";
 
 export default function Navbar() {
 
-    const navigate = useNavigate();
     const { cartItems } = useCart(); // only what we need
     const { searchTerm, setSearchTerm } = useSearch();
 

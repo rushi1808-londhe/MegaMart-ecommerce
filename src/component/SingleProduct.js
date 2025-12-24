@@ -77,10 +77,10 @@ export default function SingleProduct() {
       <nav aria-label="breadcrumb" className="mb-4">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-            <a href="#" onClick={(e) => { e.preventDefault(); navigate('/'); }}>Home</a>
+            <a onClick={(e) => { e.preventDefault(); navigate('/'); }}>Home</a>
           </li>
           <li className="breadcrumb-item">
-            <a href="#" onClick={(e) => e.preventDefault()}>{product.category}</a>
+            <a onClick={(e) => e.preventDefault()}>{product.category}</a>
           </li>
           <li className="breadcrumb-item active">{product.title}</li>
         </ol>
