@@ -1,0 +1,56 @@
+.carousel-item 
+{
+  height: 450px;
+}
+
+.carousel-item img 
+{
+  height: 100%;
+}
+.filter-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.filter-box {
+  background: white;
+  width: 320px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.footer {
+  background-color: #f8f9fa;
+}
+
+.footer-link {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .carousel-item 
+  {
+    height: 250px;
+  }
+  .form-control.nav-search
+  {
+    width: 160px;
+  }
+  
+  .cart-text
+  {
+    display: none;
+  }
+}
+
