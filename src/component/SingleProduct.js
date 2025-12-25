@@ -77,12 +77,14 @@ export default function SingleProduct() {
       <nav aria-label="breadcrumb" className="mb-4">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-            <a onClick={(e) => { e.preventDefault(); navigate('/'); }}>Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="breadcrumb-item">
-            <a onClick={(e) => e.preventDefault()}>{product.category}</a>
+            <span className="text-muted">{product.category}</span>
           </li>
-          <li className="breadcrumb-item active">{product.title}</li>
+          <li className="breadcrumb-item active">
+            {product.title}
+          </li>
         </ol>
       </nav>
 
@@ -91,8 +93,8 @@ export default function SingleProduct() {
         <div className="col-lg-6 mb-4">
           <div className="card shadow-sm border-0">
             <div className="position-relative">
-              <img 
-                src={product.images[selectedImage]} 
+              <img
+                src={product.images[selectedImage]}
                 alt={product.title}
                 className="card-img-top"
                 style={{ height: '500px', objectFit: 'contain', padding: '20px' }}
@@ -107,7 +109,7 @@ export default function SingleProduct() {
             <div className="card-body">
               <div className="d-flex gap-2 overflow-auto">
                 {product.images.map((img, index) => (
-                  <img 
+                  <img
                     key={index}
                     src={img}
                     alt={`${product.title} ${index + 1}`}
@@ -222,7 +224,7 @@ export default function SingleProduct() {
             <label className="form-label fw-semibold">Quantity</label>
             <div className="d-flex align-items-center gap-3">
               <div className="btn-group">
-                <button 
+                <button
                   className="btn btn-outline-secondary"
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                 >
@@ -231,7 +233,7 @@ export default function SingleProduct() {
                 <button className="btn btn-outline-secondary" disabled>
                   {quantity}
                 </button>
-                <button 
+                <button
                   className="btn btn-outline-secondary"
                   onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
                 >
@@ -244,14 +246,14 @@ export default function SingleProduct() {
 
           {/* Action Buttons */}
           <div className="d-grid gap-3 mb-4">
-            <button 
+            <button
               className="btn btn-primary btn-lg py-3"
               onClick={handleBuyNow}
               disabled={product.stock === 0}
             >
               ⚡ Buy Now
             </button>
-            <button 
+            <button
               className="btn btn-outline-dark btn-lg py-3"
               onClick={handleAddToCart}
               disabled={product.stock === 0}
@@ -283,7 +285,7 @@ export default function SingleProduct() {
         <div className="col-12">
           <ul className="nav nav-tabs">
             <li className="nav-item">
-              <button 
+              <button
                 className={`nav-link ${activeTab === 'description' ? 'active' : ''}`}
                 onClick={() => setActiveTab('description')}
               >
@@ -291,7 +293,7 @@ export default function SingleProduct() {
               </button>
             </li>
             <li className="nav-item">
-              <button 
+              <button
                 className={`nav-link ${activeTab === 'dimensions' ? 'active' : ''}`}
                 onClick={() => setActiveTab('dimensions')}
               >
@@ -299,7 +301,7 @@ export default function SingleProduct() {
               </button>
             </li>
             <li className="nav-item">
-              <button 
+              <button
                 className={`nav-link ${activeTab === 'reviews' ? 'active' : ''}`}
                 onClick={() => setActiveTab('reviews')}
               >
